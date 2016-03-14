@@ -24,7 +24,7 @@ public class Voiture extends Observable {
 	private void miseAJourPositionX() {
 		if (directionEnDegres == 0)
 			x += vitesseMetreSeconde;
-		else
+		else if(directionEnDegres ==180)
 			x -= vitesseMetreSeconde;
 		
 		if (x > 1000)
@@ -65,6 +65,18 @@ public class Voiture extends Observable {
 		directionEnDegres = directionEnDegres % 360;
 		
 	}
+
+    public void turnRight() {
+        directionEnDegres +=90 ;
+        directionEnDegres = directionEnDegres % 360;
+
+    }
+
+    public void turnLeft() {
+        directionEnDegres -=90 ;
+        directionEnDegres = directionEnDegres % 360;
+
+    }
 
 	public Object getDirection() {
 	return directionEnDegres;
