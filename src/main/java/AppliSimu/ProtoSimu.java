@@ -23,7 +23,7 @@ public class ProtoSimu {
 				maVoiture.miseAJourPosition();
 			}
 		});
-		
+		System.out.println("damaan");
 		timerAvancer.start();
 		
 		while(true){
