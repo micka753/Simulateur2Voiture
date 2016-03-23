@@ -8,18 +8,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import DomaineVoiture.Route;
 import DomaineVoiture.Voiture;
 
 public class IHMVoiture extends JFrame implements Observer{
 
 	private double paramatreConversionMetresPixels = 0.5;
 	private Voiture maVoiture;
+
 	private CommandeVoiture maCommandeVoiture;
 	
 	private void initGraphique() {
@@ -31,7 +34,7 @@ public class IHMVoiture extends JFrame implements Observer{
 		this.setVisible(true);
 	}
 	
-	public IHMVoiture(Voiture maVoiture) {
+	public IHMVoiture(Voiture maVoiture, Vector<Route> routes) {
 		super();
 		this.maVoiture = maVoiture;
 		maVoiture.addObserver(this);
@@ -57,11 +60,16 @@ public class IHMVoiture extends JFrame implements Observer{
 	public void paint(Graphics contexteGraphique) {
 		super.paint(contexteGraphique);
 		contexteGraphique.setColor(Color.red);
+
 		dessinerVoiture(contexteGraphique);
         contexteGraphique.setColor(Color.black);
         dessinerRoute(contexteGraphique);
         dessinerRouteBis(contexteGraphique);
 	}
+
+    private void dessinerRoutes(){
+
+    }
 
     private void dessinerRoute(Graphics contexteGraphique) {
         contexteGraphique.drawLine(0,280,280,280);
