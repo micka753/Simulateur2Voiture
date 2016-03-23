@@ -120,3 +120,6 @@ public class IHMVoiture extends JFrame implements Observer {
         }
 
     }
+
+
+
