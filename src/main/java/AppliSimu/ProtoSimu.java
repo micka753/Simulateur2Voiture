@@ -1,4 +1,4 @@
-package AppliSimu;
+package appliSimu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,11 +15,18 @@ public class ProtoSimu {
 
 	public static void main(String[] args) {
 
-		final Voiture maVoiture = new Voiture (100, 0, 10);
-		IHMVoiture monTriangle = new IHMVoiture(maVoiture);
+/*        contexteGraphique.drawLine(0,280,280,280);
+        contexteGraphique.drawLine(320,280,505,280);
 
-        Vector routes = new Vector<Route>();
+        for(int i =0; i< 505; i+=35)
+            contexteGraphique.drawLine(i,300,i+15,300);*/
+
+        Vector<Route> routes = new Vector<Route>();
         routes.add(new Route(0, 280, 40, 500,false));
+        routes.add(new Route(280, 0, 40, 500,true));
+
+        final Voiture maVoiture = new Voiture(routes.firstElement(), 10);
+        IHMVoiture monTriangle = new IHMVoiture(maVoiture, routes);
 
 		
 		Timer timerAvancer = new Timer(dureeUneSecondeEnMilliSecondes, new ActionListener() {

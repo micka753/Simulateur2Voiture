@@ -1,4 +1,4 @@
-package AppliSimu;
+package appliSimu;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 import DomaineVoiture.Voiture;
 
-public class CommandeVoiture extends JPanel implements ActionListener{
+public class CommandeVoiture extends JPanel implements ActionListener {
 	
 	private JButton boutonAccelerer;
 	private JButton boutonInverserDirection;

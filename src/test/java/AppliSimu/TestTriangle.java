@@ -1,4 +1,4 @@
-package AppliSimu;
+package appliSimu;
 
 
 import static org.junit.Assert.*;

@@ -11,6 +11,11 @@ private int largeur;
 private int longeur;
 private boolean sens;
 
+public int getLargeur()
+{
+    return largeur;
+}
+
 public int getLine1xDeb(){
     return x;
 }
@@ -18,44 +23,74 @@ public int getLine1yDeb(){
     return y;
 }
 public int getLine1xFin(){
-    return x + longeur;
+    if(sens)
+        return x;
+    else
+        return x + longeur;
 }
 public int getLine1yFin(){
-    return y + longeur;
+    if(sens)
+        return y + longeur;
+    else
+        return y;
 }
 
 public int getLine2xDeb(){
-    return x + largeur;
+    if(sens)
+        return x + largeur;
+    else
+        return x;
 }
 public int getLine2yDeb(){
-    return y + largeur;
+    if(sens)
+        return y;
+    else
+        return y + largeur;
 }
 public int getLine2xFin(){
-    return x + longeur + largeur;
+    if(sens)
+        return x + largeur;
+    else
+        return x + longeur;
 }
 public int getLine2yFin(){
-    return y + longeur + largeur;
+    if(sens)
+        return y + longeur;
+    else
+        return y + largeur;
 }
 
 public int getInterLinexDeb(){
-    return x + largeur/2;
+    if(sens)
+        return x + largeur/2;
+    else
+        return x;
 }
 public int getInterLineyDeb(){
-    return y + largeur/2;
+    if(sens)
+        return y;
+    else
+        return y + largeur/2;
 }
 public int getInterLinexFin(){
-    return x + longeur + largeur/2;
+    if(sens)
+        return x + largeur/2;
+    else
+        return x + longeur;
 }
 public int getInterLineyFin(){
-    return y + longeur + largeur/2;
+    if(sens)
+        return y + longeur;
+    else
+        return y + largeur/2;
 }
 
-public Route(int x,int y,int largeur,int  longeur,boolean sens){
-    this.x =x;
-    this.y =y;
-    this.largeur = largeur;
-    this.longeur = longeur;
-    this.sens = sens;
+public Route(int x,int y,int largeur,int  longeur,boolean sens) {
+        this.x = x;
+        this.y = y;
+        this.largeur = largeur;
+        this.longeur = longeur;
+        this.sens = sens;
 }
 
 }
